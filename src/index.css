@@ -2,41 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Folosesc.ro Design System - Apple-inspired minimal design */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Apple-style color palette */
+    --background: 0 0% 99%;
+    --foreground: 215 25% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep blue primary - #1A4D8F */
+    --primary: 213 67% 33%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light grey secondary */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 215 25% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral greys */
+    --muted: 210 14% 97%;
+    --muted-foreground: 215 13% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Success green accent - #28A745 */
+    --accent: 134 61% 41%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Subtle borders */
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
+    --ring: 213 67% 33%;
 
-    --radius: 0.5rem;
+    /* Rounded corners - Apple style */
+    --radius: 12px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +105,44 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-system antialiased;
+  }
+}
+
+/* Custom Apple-style design tokens */
+@layer utilities {
+  .font-system {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', system-ui, sans-serif;
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 2px 16px 0 rgba(26, 77, 143, 0.08);
+  }
+  
+  .shadow-card {
+    box-shadow: 0 4px 24px 0 rgba(26, 77, 143, 0.12);
+  }
+  
+  .backdrop-glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .category-tile {
+    @apply bg-card rounded-2xl p-6 shadow-soft border border-border/50 transition-all duration-300;
+    @apply hover:shadow-card hover:scale-[1.02] hover:-translate-y-1;
+  }
+  
+  .item-card {
+    @apply bg-card rounded-3xl overflow-hidden shadow-soft border border-border/30 transition-all duration-300;
+    @apply hover:shadow-card hover:scale-[1.01];
+  }
+  
+  .booking-button {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground font-medium py-4 px-8 rounded-2xl;
+    @apply shadow-soft transition-all duration-200 hover:shadow-card active:scale-95;
   }
 }
