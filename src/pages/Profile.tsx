@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import cameraImg from "@/assets/camera.jpg";
 import bikeImg from "@/assets/bike.jpg";
+import alexandraImg from "@/assets/alexandra-profile.jpg";
 
 const Profile = () => {
   const user = {
@@ -60,8 +61,12 @@ const Profile = () => {
       <main className="max-w-md mx-auto px-4 pb-8">
         {/* Profile Header */}
         <div className="py-6 text-center border-b border-border/30">
-          <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-3xl font-medium text-primary">{user.avatar}</span>
+          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+            <img 
+              src={alexandraImg} 
+              alt="Alexandra profile" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <h1 className="text-2xl font-bold text-foreground mb-2">{user.name}</h1>
           <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-2">
@@ -151,10 +156,12 @@ const Profile = () => {
                 </div>
               )}
               
-              <Button className="booking-button w-full" size="lg">
-                <Plus className="w-5 h-5 mr-2" />
-                List an Item
-              </Button>
+              <Link to="/list-item">
+                <Button className="booking-button w-full" size="lg">
+                  <Plus className="w-5 h-5 mr-2" />
+                  List an Item
+                </Button>
+              </Link>
             </TabsContent>
           </Tabs>
         </div>

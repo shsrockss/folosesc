@@ -6,6 +6,8 @@ import cameraImg from "@/assets/camera.jpg";
 import bikeImg from "@/assets/bike.jpg";
 import tentImg from "@/assets/tent.jpg";
 import watchImg from "@/assets/watch.jpg";
+import sonyA7Img from "@/assets/sony-a7iii.jpg";
+import giantImg from "@/assets/giant-road.jpg";
 
 const categories = [
   { id: 'camera', name: 'Camera', icon: Camera, image: cameraImg },
