@@ -38,6 +38,30 @@ const featuredItems = [
     location: "Brasov",
     image: tentImg,
     rating: 4.7
+  },
+  {
+    id: 4,
+    title: "Apple Watch Series 9",
+    price: 25,
+    location: "Bucharest",
+    image: watchImg,
+    rating: 4.9
+  },
+  {
+    id: 5,
+    title: "Sony A7 III",
+    price: 75,
+    location: "Cluj-Napoca",
+    image: cameraImg,
+    rating: 4.8
+  },
+  {
+    id: 6,
+    title: "Giant Road Bike",
+    price: 40,
+    location: "Iasi",
+    image: bikeImg,
+    rating: 4.7
   }
 ];
 
