@@ -1,31 +1,22 @@
 import { ArrowLeft, Star, MapPin, Calendar, Shield } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import cameraImg from "@/assets/camera.jpg";
+import { getItemById } from "@/data/items";
 
 const ItemDetail = () => {
   const { id } = useParams();
+  const itemId = id ? parseInt(id) : null;
   
-  // Mock data - would come from API in real app
-  const item = {
-    id: 1,
-    title: "Canon EOS R5 Professional Camera",
-    price: 89,
-    location: "Bucharest, Sector 1",
-    rating: 4.9,
-    reviews: 127,
-    images: [cameraImg, cameraImg, cameraImg],
-    description: "Professional full-frame mirrorless camera perfect for photography and videography. Includes 24-70mm lens, extra batteries, memory cards, and carrying case.",
-    features: ["42.4MP Full Frame", "8K Video Recording", "In-Body Stabilization", "WiFi & Bluetooth"],
-    owner: {
-      name: "Alexandra M.",
-      avatar: "A",
-      rating: 4.8,
-      verified: true
-    },
-    availability: "Available next 3 days"
-  };
+  if (!itemId) {
+    return <Navigate to="/404" replace />;
+  }
+  
+  const item = getItemById(itemId);
+  
+  if (!item) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,7 +29,7 @@ const ItemDetail = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Button>
             </Link>
-            <h1 className="text-lg font-semibold text-foreground">Item Details</h1>
+            <h1 className="text-lg font-semibold text-foreground">Detalii Produs</h1>
           </div>
         </div>
       </header>
@@ -66,7 +57,7 @@ const ItemDetail = () => {
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     <span>{item.rating}</span>
-                    <span>({item.reviews} reviews)</span>
+                    <span>({item.reviews} recenzii)</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -76,20 +67,20 @@ const ItemDetail = () => {
               </div>
               <div className="text-right">
                 <div className="text-3xl font-bold text-primary">{item.price} lei</div>
-                <div className="text-sm text-muted-foreground">per day</div>
+                <div className="text-sm text-muted-foreground">pe zi</div>
               </div>
             </div>
           </div>
 
           {/* Description */}
           <div className="py-6 border-b border-border/30">
-            <h3 className="font-semibold text-foreground mb-3">Description</h3>
+            <h3 className="font-semibold text-foreground mb-3">Descriere</h3>
             <p className="text-muted-foreground leading-relaxed">{item.description}</p>
           </div>
 
           {/* Features */}
           <div className="py-6 border-b border-border/30">
-            <h3 className="font-semibold text-foreground mb-3">Key Features</h3>
+            <h3 className="font-semibold text-foreground mb-3">Caracteristici Principale</h3>
             <div className="grid grid-cols-2 gap-2">
               {item.features.map((feature, index) => (
                 <Badge key={index} variant="secondary" className="justify-start p-2 rounded-xl">
@@ -101,10 +92,14 @@ const ItemDetail = () => {
 
           {/* Owner */}
           <div className="py-6 border-b border-border/30">
-            <h3 className="font-semibold text-foreground mb-3">Hosted by</h3>
+            <h3 className="font-semibold text-foreground mb-3">Oferit de</h3>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-lg font-medium text-primary">{item.owner.avatar}</span>
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden">
+                {typeof item.owner.avatar === 'string' && item.owner.avatar.length === 1 ? (
+                  <span className="text-lg font-medium text-primary">{item.owner.avatar}</span>
+                ) : (
+                  <img src={item.owner.avatar} alt={item.owner.name} className="w-full h-full object-cover" />
+                )}
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
@@ -113,7 +108,7 @@ const ItemDetail = () => {
                 </div>
                 <div className="flex items-center gap-1 text-sm text-muted-foreground">
                   <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  <span>{item.owner.rating} host rating</span>
+                  <span>{item.owner.rating} rating gazdă</span>
                 </div>
               </div>
             </div>
@@ -133,7 +128,7 @@ const ItemDetail = () => {
           <div className="max-w-md mx-auto px-4 py-4">
             <Link to={`/booking/${item.id}`}>
               <Button className="booking-button w-full text-base">
-                Book Now - {item.price} lei/day
+                Rezervă Acum - {item.price} lei/zi
               </Button>
             </Link>
           </div>
