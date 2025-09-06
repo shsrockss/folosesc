@@ -92,7 +92,7 @@ const Home = () => {
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
             <Input
-              placeholder="What do you need?"
+              placeholder="Ce cauți să închiriezi?"
               className="pl-12 pr-4 py-3 rounded-2xl border-border/50 bg-muted/30 text-base"
             />
           </div>
@@ -100,7 +100,7 @@ const Home = () => {
 
         {/* Categories Grid */}
         <section className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">Browse categories</h2>
+          <h2 className="text-lg font-semibold mb-4">Categorii populare</h2>
           <div className="grid grid-cols-2 gap-4">
             {categories.map((category) => (
               <Link key={category.id} to={`/items?category=${category.id}`}>
@@ -125,9 +125,9 @@ const Home = () => {
         {/* Featured Items */}
         <section>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">Featured near you</h2>
+            <h2 className="text-lg font-semibold">Recomandate în orașul tău</h2>
             <Button variant="ghost" size="sm" className="text-primary">
-              See all
+              Vezi toate
             </Button>
           </div>
           

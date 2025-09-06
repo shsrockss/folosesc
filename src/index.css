@@ -31,6 +31,10 @@
     /* Success green accent - #28A745 */
     --accent: 134 61% 41%;
     --accent-foreground: 0 0% 100%;
+    
+    /* Yellow highlight - #FFD54F */
+    --warning: 45 97% 65%;
+    --warning-foreground: 45 100% 20%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;

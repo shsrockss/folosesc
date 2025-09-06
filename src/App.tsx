@@ -10,7 +10,10 @@ import ItemDetail from "./pages/ItemDetail";
 import Booking from "./pages/Booking";
 import Profile from "./pages/Profile";
 import ListItem from "./pages/ListItem";
+import Rentals from "./pages/Rentals";
+import Messages from "./pages/Messages";
 import NotFound from "./pages/NotFound";
+import Navigation from "./components/Navigation";
 
 const queryClient = new QueryClient();
 
@@ -20,15 +23,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/items" element={<Items />} />
-          <Route path="/item/:id" element={<ItemDetail />} />
-          <Route path="/booking/:id" element={<Booking />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/list-item" element={<ListItem />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="pb-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/items" element={<Items />} />
+            <Route path="/item/:id" element={<ItemDetail />} />
+            <Route path="/booking/:id" element={<Booking />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/list-item" element={<ListItem />} />
+            <Route path="/rentals" element={<Rentals />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Navigation />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
