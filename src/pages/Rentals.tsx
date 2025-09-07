@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/hooks/useCart";
 
 const mockRentals = {
   upcoming: [
@@ -41,6 +42,8 @@ const mockRentals = {
 };
 
 const Rentals = () => {
+  const { cartItems } = useCart();
+  
   const renderRentalCard = (rental: any) => (
     <Link key={rental.id} to={`/rental/${rental.id}`}>
       <div className="item-card p-4 mb-4">
@@ -101,8 +104,39 @@ const Rentals = () => {
           </TabsList>
           
           <TabsContent value="upcoming" className="space-y-4">
-            {mockRentals.upcoming.length > 0 ? (
-              mockRentals.upcoming.map(renderRentalCard)
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => (
+                <Link key={item.id} to={`/booking/${item.id}`}>
+                  <div className="item-card p-4 mb-4">
+                    <div className="flex justify-between items-start mb-3">
+                      <div>
+                        <h3 className="font-semibold text-foreground">{item.title}</h3>
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
+                          <MapPin className="w-4 h-4" />
+                          {item.location}
+                        </div>
+                      </div>
+                      <Badge variant="secondary">În coș</Badge>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {item.days} {item.days === 1 ? 'zi' : 'zile'}
+                        {item.startDate && ` - ${item.startDate.toLocaleDateString('ro-RO')}`}
+                        {item.endDate && ` to ${item.endDate.toLocaleDateString('ro-RO')}`}
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold text-primary">{item.price * item.days} lei total</span>
+                      <Button variant="outline" size="sm">
+                        Finalizează
+                      </Button>
+                    </div>
+                  </div>
+                </Link>
+              ))
             ) : (
               <div className="text-center py-12">
                 <Clock className="w-12 h-12 text-muted-foreground mx-auto mb-4" />

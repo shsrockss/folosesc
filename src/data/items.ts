@@ -23,7 +23,7 @@ export interface Item {
   location: string;
   image: string;
   rating: number;
-  category: 'camera' | 'bike' | 'tent' | 'watch';
+  category: 'camera' | 'bike' | 'tent' | 'watch' | 'drone' | 'game' | 'tool';
   reviews: number;
   images: string[];
   description: string;
@@ -381,6 +381,180 @@ export const allItems: Item[] = [
     },
     availability: "Disponibil pentru testare",
     deposit: 200
+  },
+
+  // Drone items
+  {
+    id: 17,
+    title: "DJI Mini 3 Pro Dronă",
+    price: 60,
+    location: "București, Centru",
+    image: cameraImg, // Using camera image as placeholder
+    rating: 4.8,
+    category: "drone",
+    reviews: 92,
+    images: [cameraImg, sonyA7Img, nikonImg],
+    description: "Dronă compactă și inteligentă cu cameră 4K. Perfectă pentru filmări aeriene și fotografie. Include toate accesoriile și baterii suplimentare.",
+    features: ["Cameră 4K HDR", "Timp zbor 34 min", "Evitare obstacole", "ActiveTrack 4.0"],
+    owner: {
+      name: "Radu P.",
+      avatar: "R",
+      rating: 4.9,
+      verified: true
+    },
+    availability: "Disponibil cu instrucțiuni",
+    deposit: 800
+  },
+  {
+    id: 18,
+    title: "DJI Air 2S Dronă Profesională",
+    price: 85,
+    location: "Cluj-Napoca, Bună Ziua",
+    image: bikeImg, // Using bike image as placeholder
+    rating: 4.9,
+    category: "drone",
+    reviews: 156,
+    images: [bikeImg, giantImg, specializedImg],
+    description: "Dronă profesională cu senzor 1-inch și video 5.4K. Perfectă pentru proiecte comerciale și fotografie aeriană de înaltă calitate.",
+    features: ["Senzor 1-inch", "Video 5.4K", "MasterShots", "FocusTrack"],
+    owner: {
+      name: "Sergiu M.",
+      avatar: "S",
+      rating: 5.0,
+      verified: true
+    },
+    availability: "Disponibil cu licența de pilotaj",
+    deposit: 1500
+  },
+
+  // Board game items
+  {
+    id: 19,
+    title: "Monopoly Deluxe Edition",
+    price: 8,
+    location: "Timișoara, Centru",
+    image: tentImg, // Using tent image as placeholder
+    rating: 4.6,
+    category: "game",
+    reviews: 43,
+    images: [tentImg, hikingTentImg, familyDomeImg],
+    description: "Jocul clasic Monopoly în ediție deluxe cu piese metalice premium. Perfect pentru seri de familie sau petreceri cu prietenii.",
+    features: ["Piese metalice", "Tablă premium", "6-8 jucători", "Instrucțiuni în română"],
+    owner: {
+      name: "Laura A.",
+      avatar: "L",
+      rating: 4.7,
+      verified: false
+    },
+    availability: "Disponibil weekenduri",
+    deposit: 50
+  },
+  {
+    id: 20,
+    title: "Catan + Extensii",
+    price: 12,
+    location: "Brașov, Centrul Vechi",
+    image: watchImg, // Using watch image as placeholder
+    rating: 4.8,
+    category: "game",
+    reviews: 67,
+    images: [watchImg, samsungImg, garminImg],
+    description: "Jocul strategic Catan cu toate extensiile. Ideal pentru grup de 3-6 jucători. Include extensiile Marinarii și Orașele și Cavalerii.",
+    features: ["Joc de bază + 4 extensii", "3-6 jucători", "Traducere română", "Componente complete"],
+    owner: {
+      name: "Bogdan F.",
+      avatar: "B",
+      rating: 4.6,
+      verified: true
+    },
+    availability: "Disponibil pentru game nights",
+    deposit: 80
+  },
+  {
+    id: 21,
+    title: "Azul Board Game Collection",
+    price: 10,
+    location: "Iași, Copou",
+    image: cameraImg, // Using camera image as placeholder
+    rating: 4.7,
+    category: "game",
+    reviews: 52,
+    images: [cameraImg, sonyA7Img, fujiImg],
+    description: "Colecția completă de jocuri Azul: jocul de bază plus Vitraliile din Sintra și Pavilionul de Vară. Jocuri de strategie frumos ilustrate.",
+    features: ["3 jocuri Azul", "2-4 jucători", "Calitate premium", "Artă deosebită"],
+    owner: {
+      name: "Diana S.",
+      avatar: "D",
+      rating: 4.8,
+      verified: true
+    },
+    availability: "Disponibil pentru petreceri",
+    deposit: 60
+  },
+
+  // Tool items
+  {
+    id: 22,
+    title: "Bosch Perceuse Drill Set",
+    price: 25,
+    location: "București, Militari",
+    image: bikeImg, // Using bike image as placeholder
+    rating: 4.7,
+    category: "tool",
+    reviews: 89,
+    images: [bikeImg, giantImg, cannondaleImg],
+    description: "Set complet de găurit și înșurubat cu baterie. Include toate accesoriile necesare pentru lucrări casnice și renovări.",
+    features: ["Baterie 18V", "Set 100 accesorii", "2 viteze", "LED integrat"],
+    owner: {
+      name: "Marius T.",
+      avatar: "M",
+      rating: 4.8,
+      verified: true
+    },
+    availability: "Disponibil zilnic",
+    deposit: 200
+  },
+  {
+    id: 23,
+    title: "Husqvarna Automower Robotică",
+    price: 40,
+    location: "Cluj-Napoca, Europa",
+    image: tentImg, // Using tent image as placeholder
+    rating: 4.9,
+    category: "tool",
+    reviews: 124,
+    images: [tentImg, hikingTentImg, ultralightImg],
+    description: "Mașină de tuns iarba robotizată pentru grădini până la 1000mp. Programabilă și cu aplicație mobilă. Perfectă pentru grădini mari.",
+    features: ["Suprafață 1000mp", "Aplicație mobilă", "Antifurt GPS", "Rezistentă la ploaie"],
+    owner: {
+      name: "Andrei L.",
+      avatar: "A",
+      rating: 4.9,
+      verified: true
+    },
+    availability: "Disponibil cu instrucțiuni",
+    deposit: 600
+  },
+  {
+    id: 24,
+    title: "Makita Polizor Unghiular",
+    price: 18,
+    location: "Constanța, Tomis",
+    image: watchImg, // Using watch image as placeholder
+    rating: 4.6,
+    category: "tool",
+    reviews: 76,
+    images: [watchImg, fitbitImg, samsungImg],
+    description: "Polizor unghiular profesional 125mm cu toate discurile necesare. Perfect pentru tăiere metal, piatră și șlefuire.",
+    features: ["Disc 125mm", "11000 rpm", "Protecție praf", "Set discuri inclus"],
+    owner: {
+      name: "Cosmin R.",
+      avatar: "C",
+      rating: 4.5,
+      verified: false
+    },
+    availability: "Disponibil pentru proiecte",
+    deposit: 150
   }
 ];
 

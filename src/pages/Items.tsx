@@ -31,6 +31,9 @@ const Items = () => {
       case 'bike': return 'Biciclete';
       case 'tent': return 'Corturi';
       case 'watch': return 'Ceasuri';
+      case 'drone': return 'Drone';
+      case 'game': return 'Jocuri de Masă';
+      case 'tool': return 'Unelte';
       default: return 'Toate Produsele';
     }
   };

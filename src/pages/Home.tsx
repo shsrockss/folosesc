@@ -1,4 +1,4 @@
-import { Search, Camera, Bike, MapPin, Watch } from "lucide-react";
+import { Search, Camera, Bike, MapPin, Watch, Plane, Gamepad2, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,10 +10,13 @@ import sonyA7Img from "@/assets/sony-a7iii.jpg";
 import giantImg from "@/assets/giant-road.jpg";
 
 const categories = [
-  { id: 'camera', name: 'Camera', icon: Camera, image: cameraImg },
-  { id: 'bike', name: 'Bike', icon: Bike, image: bikeImg },
-  { id: 'tent', name: 'Tent', icon: MapPin, image: tentImg },
-  { id: 'watch', name: 'Watch', icon: Watch, image: watchImg },
+  { id: 'camera', name: 'Camere', icon: Camera, image: cameraImg },
+  { id: 'bike', name: 'Biciclete', icon: Bike, image: bikeImg },
+  { id: 'tent', name: 'Corturi', icon: MapPin, image: tentImg },
+  { id: 'watch', name: 'Ceasuri', icon: Watch, image: watchImg },
+  { id: 'drone', name: 'Drone', icon: Plane, image: sonyA7Img },
+  { id: 'game', name: 'Jocuri', icon: Gamepad2, image: giantImg },
+  { id: 'tool', name: 'Unelte', icon: Wrench, image: cameraImg },
 ];
 
 const featuredItems = [
@@ -101,7 +104,7 @@ const Home = () => {
         {/* Categories Grid */}
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-4">Categorii populare</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3">
             {categories.map((category) => (
               <Link key={category.id} to={`/items?category=${category.id}`}>
                 <div className="category-tile">
