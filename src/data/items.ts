@@ -49,7 +49,7 @@ export const allItems: Item[] = [
     rating: 4.9,
     category: "camera",
     reviews: 127,
-    images: [cameraImg, cameraImg, cameraImg],
+    images: [cameraImg, sonyA7Img, nikonImg],
     description: "Cameră mirrorless full-frame profesională perfectă pentru fotografie și videografie. Include obiectiv 24-70mm, baterii suplimentare, carduri de memorie și geantă de transport.",
     features: ["42.4MP Full Frame", "Înregistrare Video 8K", "Stabilizare în Corp", "WiFi & Bluetooth"],
     owner: {
@@ -70,7 +70,7 @@ export const allItems: Item[] = [
     rating: 4.8,
     category: "camera",
     reviews: 89,
-    images: [sonyA7Img, sonyA7Img, sonyA7Img],
+    images: [sonyA7Img, cameraImg, fujiImg],
     description: "Cameră mirrorless full-frame excelentă pentru fotografii și videografi. Include obiectiv standard și accesorii complete.",
     features: ["24.2MP Full Frame", "Autofocus Hibrid", "Stabilizare 5 axe", "Dual Card Slots"],
     owner: {
@@ -91,7 +91,7 @@ export const allItems: Item[] = [
     rating: 4.7,
     category: "camera",
     reviews: 156,
-    images: [nikonImg, nikonImg, nikonImg],
+    images: [nikonImg, sonyA7Img, cameraImg],
     description: "DSLR profesional cu rezoluție înaltă, perfect pentru portrete și peisaje. Include obiectiv 24-120mm și toate accesoriile.",
     features: ["45.7MP FX Sensor", "153 Puncte AF", "4K UHD Video", "Dual XQD/SD"],
     owner: {
@@ -112,7 +112,7 @@ export const allItems: Item[] = [
     rating: 4.6,
     category: "camera",
     reviews: 73,
-    images: [fujiImg, fujiImg, fujiImg],
+    images: [fujiImg, nikonImg, sonyA7Img],
     description: "Cameră mirrorless cu design vintage și calitate excepțională a imaginii. Perfectă pentru street photography și călătorii.",
     features: ["26.1MP X-Trans", "Stabilizare IBIS", "4K 60fps", "Film Simulations"],
     owner: {
@@ -135,7 +135,7 @@ export const allItems: Item[] = [
     rating: 4.8,
     category: "bike",
     reviews: 92,
-    images: [bikeImg, bikeImg, bikeImg],
+    images: [bikeImg, giantImg, specializedImg],
     description: "Bicicletă montană robustă pentru trasee dificile. Include cască, pompă și kit de reparații. Perfectă pentru aventuri în natură.",
     features: ["Cadru Aluminiu", "21 Viteze", "Suspensie Față", "Frâne pe Disc"],
     owner: {
@@ -156,7 +156,7 @@ export const allItems: Item[] = [
     rating: 4.7,
     category: "bike",
     reviews: 65,
-    images: [giantImg, giantImg, giantImg],
+    images: [giantImg, bikeImg, cannondaleImg],
     description: "Bicicletă de șosea rapidă și ușoară, ideală pentru ciclism urban și antrenamente. Include accesorii de siguranță complete.",
     features: ["Cadru Carbon", "16 Viteze", "Roți Aero", "Ghidon Drop"],
     owner: {
@@ -177,7 +177,7 @@ export const allItems: Item[] = [
     rating: 4.6,
     category: "bike",
     reviews: 48,
-    images: [specializedImg, specializedImg, specializedImg],
+    images: [specializedImg, giantImg, bikeImg],
     description: "Bicicletă hibrid versatilă pentru oraș și drumeții ușoare. Combină confortul cu performanța pentru utilizare zilnică.",
     features: ["Cadru Aluminiu", "24 Viteze", "Poziție Confortabilă", "Portbagaj"],
     owner: {
@@ -198,7 +198,7 @@ export const allItems: Item[] = [
     rating: 4.9,
     category: "bike",
     reviews: 134,
-    images: [cannondaleImg, cannondaleImg, cannondaleImg],
+    images: [cannondaleImg, specializedImg, giantImg],
     description: "Bicicletă montană de top pentru cei mai experimentați. Echipament complet pentru trasee extreme și competiții.",
     features: ["Cadru Carbon", "30 Viteze", "Suspensie Completă", "Frâne Hidraulice"],
     owner: {
@@ -221,7 +221,7 @@ export const allItems: Item[] = [
     rating: 4.7,
     category: "tent",
     reviews: 78,
-    images: [tentImg, tentImg, tentImg],
+    images: [tentImg, hikingTentImg, familyDomeImg],
     description: "Cort spațios pentru camping în familie. Rezistent la intemperii, ușor de montat și cu vestibul pentru echipamente.",
     features: ["4 Persoane", "Rezistent la Apă", "Montaj Rapid", "Vestibul Mare"],
     owner: {
@@ -242,7 +242,7 @@ export const allItems: Item[] = [
     rating: 4.5,
     category: "tent",
     reviews: 52,
-    images: [hikingTentImg, hikingTentImg, hikingTentImg],
+    images: [hikingTentImg, ultralightImg, tentImg],
     description: "Cort compact pentru drumeții montane. Ultraușor și rezistent, perfect pentru backpacking și aventuri în natură.",
     features: ["2 Persoane", "Ultraușor 2kg", "3 Sezoane", "Ventilație Dublă"],
     owner: {
@@ -263,7 +263,7 @@ export const allItems: Item[] = [
     rating: 4.8,
     category: "tent",
     reviews: 96,
-    images: [familyDomeImg, familyDomeImg, familyDomeImg],
+    images: [familyDomeImg, tentImg, hikingTentImg],
     description: "Cort mare tip dom pentru vacanțe în familie. Spațiu generos, înălțime confortabilă și rezistență maximă.",
     features: ["6 Persoane", "Înălțime 2m", "2 Camere", "Pardoseală Detașabilă"],
     owner: {
@@ -284,7 +284,7 @@ export const allItems: Item[] = [
     rating: 4.6,
     category: "tent",
     reviews: 41,
-    images: [ultralightImg, ultralightImg, ultralightImg],
+    images: [ultralightImg, hikingTentImg, familyDomeImg],
     description: "Cort ultraușor pentru trekking extreme. Minimalist dar rezistent, pentru aventurierii care contează fiecare gram.",
     features: ["1 Persoană", "900g Greutate", "4 Sezoane", "Material Premium"],
     owner: {
@@ -307,7 +307,7 @@ export const allItems: Item[] = [
     rating: 4.9,
     category: "watch",
     reviews: 203,
-    images: [watchImg, watchImg, watchImg],
+    images: [watchImg, samsungImg, garminImg],
     description: "Smartwatch premium cu toate funcțiile pentru fitness și comunicare. Include încărcător și curea suplimentară.",
     features: ["GPS + Cellular", "Senzor Oxigen", "EKG", "Rezistent la Apă"],
     owner: {
@@ -328,7 +328,7 @@ export const allItems: Item[] = [
     rating: 4.7,
     category: "watch",
     reviews: 87,
-    images: [samsungImg, samsungImg, samsungImg],
+    images: [samsungImg, fitbitImg, watchImg],
     description: "Smartwatch Android cu design elegant și funcționalitate completă. Perfect pentru sport și activități zilnice.",
     features: ["Wear OS", "GPS Integrat", "Monitor Cardiac", "Baterie 2 Zile"],
     owner: {
@@ -349,7 +349,7 @@ export const allItems: Item[] = [
     rating: 4.8,
     category: "watch",
     reviews: 145,
-    images: [garminImg, garminImg, garminImg],
+    images: [garminImg, watchImg, samsungImg],
     description: "Ceas multisport pentru aventurieri. Rezistență extremă, GPS precis și baterie de lungă durată pentru expediții.",
     features: ["Multi-GNSS", "Baterie 18 zile", "100+ Sporturi", "Hărți TopoActive"],
     owner: {
@@ -370,7 +370,7 @@ export const allItems: Item[] = [
     rating: 4.5,
     category: "watch",
     reviews: 72,
-    images: [fitbitImg, fitbitImg, fitbitImg],
+    images: [fitbitImg, garminImg, samsungImg],
     description: "Tracker de wellness cu focus pe sănătate și stres. Monitorizare completă a activității și somnului.",
     features: ["Senzor Stres", "EKG", "SpO2", "6+ Zile Baterie"],
     owner: {
